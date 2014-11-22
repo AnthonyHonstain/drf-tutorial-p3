@@ -29,7 +29,6 @@ def snippet_list(request, format=None):
         return Response(serializer.errors, status=400)
 
 
-
 @api_view(['GET', 'PUT', 'DELETE'])
 @permission_classes([permissions.AllowAny, ])
 def snippet_detail(request, pk, format=None):
