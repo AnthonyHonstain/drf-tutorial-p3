@@ -1,0 +1,16 @@
+# Python bytecode:
+*.py[co]
+
+# Packaging files:
+*.egg*
+
+# Emacs backup files:
+*~
+
+# Secret Settings
+tutorial/settings_secret.py
+
+# Eclipse project
+.project
+.pydevproject
+.settings
