@@ -110,6 +110,19 @@ REST_FRAMEWORK = {
     'PAGINATE_BY': 10
 }
 
+
+'''
+Problem supporting AngularJS calls
+    RuntimeError at /snippets/snippets
+    You called this URL via POST, but the URL doesn't end in a slash and you
+    have APPEND_SLASH set. Django can't redirect to the slash URL while
+    maintaining POST data. Change your form to point to
+    localhost:8000/snippets/snippets/ (note the trailing slash), or set
+    APPEND_SLASH=False in your Django settings.
+'''
+# http://www.masnun.com/2013/09/18/django-rest-framework-angularjs-resource-trailing-slash-problem.html
+APPEND_SLASH = False
+
 # CORS - going to allow all for now
 # TODO - need to understand the implications of this better.
 # https://github.com/ottoyiu/django-cors-headers
