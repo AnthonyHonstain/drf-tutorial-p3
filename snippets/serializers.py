@@ -20,5 +20,6 @@ class SnippetSerializer(serializers.Serializer):
             # Update existing instance
             instance.title = attrs.get('title', instance.title)
             instance.code = attrs.get('code', instance.code)
+            return instance
 
         return Snippet(**attrs)
