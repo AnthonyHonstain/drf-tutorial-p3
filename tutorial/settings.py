@@ -50,6 +50,7 @@ INSTALLED_APPS = (
     'rest_framework',
     'corsheaders',
     'snippets',
+    'drfauth',
 )
 
 MIDDLEWARE_CLASSES = (
