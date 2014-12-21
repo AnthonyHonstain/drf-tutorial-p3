@@ -7,6 +7,7 @@ class SnippetSerializer(serializers.Serializer):
     pk = serializers.Field()
     title = serializers.CharField(required=False, max_length=100)
     code = serializers.CharField(widget=widgets.Textarea, max_length=100000)
+    value = serializers.IntegerField(widget=widgets.NumberInput, min_value=-3, max_value=3)
 
     def restore_object(self, attrs, instance=None):
         """
@@ -20,6 +21,7 @@ class SnippetSerializer(serializers.Serializer):
             # Update existing instance
             instance.title = attrs.get('title', instance.title)
             instance.code = attrs.get('code', instance.code)
+            instance.value = attrs.get('value', instance.value)
             return instance
 
         return Snippet(**attrs)
