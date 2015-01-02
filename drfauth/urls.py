@@ -10,6 +10,7 @@ urlpatterns = patterns('drfauth.views',
     url(r'^register[/]?$', 'register'),
     url(r'^login[/]?$', 'login'),
     url(r'^logout[/]?$', 'logout'),
+    url(r'^account_status[/]?$', 'account_status'),
 )
 
 urlpatterns = format_suffix_patterns(urlpatterns)

@@ -72,3 +72,12 @@ def logout(request):
         return json_response({})
     else:
         return json_response({'error': 'Invalid Method'}, status=405)
+
+@csrf_exempt
+@token_required
+def account_status(request):
+    if request.method == 'GET':
+        user = request.token.user
+        return json_response({'username': user.username, 'is_active': user.is_active})
+    else:
+        return json_response({'error': 'Invalid Method'}, status=405)
