@@ -25,6 +25,8 @@ def register(request):
             token = Token.objects.create(user=user)
             return json_response({'token': token.token,
                                   'username': user.username})
+        else:
+            return json_response({'error': 'Invalid Username/Password'}, status=400)
 
     elif request.method == 'OPTIONS':
         return json_response({})
